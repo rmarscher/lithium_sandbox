@@ -63,7 +63,7 @@ Media::type('js', array('application/javascript', 'text/javascript'), array(
 		'template' => array(
 			'{:library}/views/{:controller}/{:template}.js.php'
 		),
-		'layout' => false
+		'layout' => '{:library}/views/layouts/default.js.php'
 	),
 	//'conditions' => array('ajax' => true)
 ));
