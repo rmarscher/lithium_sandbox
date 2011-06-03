@@ -1,1 +1,1 @@
-$('#stream').append('<?= $this->view()->render(array('element' => 'foo'), array('message' => $message)); ?>');
+$('#stream').append(<?php echo json_encode(trim($this->view()->render(array('element' => 'foo'), array('message' => $message)))); ?>);

@@ -58,14 +58,15 @@ Dispatcher::applyFilter('_callable', function($self, $params, $chain) {
 
 
 Media::type('js', array('application/javascript', 'text/javascript'), array(
-	'view' => 'lithium\template\View',
-	'paths' => array(
-		'template' => array(
-			'{:library}/views/{:controller}/{:template}.js.php'
-		),
-		'layout' => '{:library}/views/layouts/default.js.php'
-	),
-	//'conditions' => array('ajax' => true)
+    'view' => 'lithium\template\View',
+    'paths' => array(
+        'template' => '{:library}/views/{:controller}/{:template}.{:type}.php',
+		'layout' => '{:library}/views/layouts/{:layout}.{:type}.php',
+		'element' => array(
+            '{:library}/views/elements/{:template}.{:type}.php',
+            '{:library}/views/elements/{:template}.html.php',
+		)
+    )
 ));
 
 ?>
